@@ -14,9 +14,15 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase
-      - npm run build
+      - npm install
     finally:
       - echo Completed the pre_build phase
+  build:
+    commands:
+      - echo the build phase
+      - npm run build
+    finally:
+      - echo Completed the build phase
   post_build:
     commands:
       - echo Entered the post_build phase
