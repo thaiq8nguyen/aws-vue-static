@@ -1,0 +1,23 @@
+version 0.2
+
+phases:
+  install:
+    commands:
+      - echo Entered the install phase
+      - npm install npm@latest -g
+    finally:
+      - echo Completed the install phase
+  pre_build:
+    commands:
+      - echo Entered the pre_build phase
+      - npm run build
+    finally:
+      - echo Completed the pre_build phase
+  post_build:
+    commands:
+      - echo Entered the post_build phase
+      - aws s3 sync ./dist s3://lamda-thai-nguyen-demo
+    finally:
+      - echo Completed the post_build phase
+
+
