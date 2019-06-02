@@ -18,7 +18,7 @@ phases:
   post_build:
     commands:
       - echo Entered the post_build phase
-      - aws s3 sync ./dist s3://lamda-thai-nguyen-demo
+      - aws s3 sync ./dist $S3_BUCKET
     finally:
       - echo Completed the post_build phase
 
