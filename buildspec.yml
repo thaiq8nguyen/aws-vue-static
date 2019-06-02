@@ -2,6 +2,8 @@ version: 0.2
 
 phases:
   install:
+    runtime-version:
+      nodejs: 10
     commands:
       - echo Entered the install phase
       - npm install npm@latest -g
@@ -12,7 +14,7 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase
-      - npm run build:$ENVIRONMENT
+      - npm run build
     finally:
       - echo Completed the pre_build phase
   post_build:
